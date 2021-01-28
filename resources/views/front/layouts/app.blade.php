@@ -5,34 +5,27 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Folio Bootstrap Template - Index</title>
+  <title>{{config('app.name','Coding Beanie Blog')}}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ asset("/HTML/assets/img/favicon.png") }}" rel="icon">
+  <link href="{{ asset("/HTML/assets/img/apple-touch-icon.png") }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/hover/hover.min.css" rel="stylesheet">
-  <link href="assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="{{ asset("/HTML/assets/vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
+  <link href="{{ asset("/HTML/assets/vendor/hover/hover.min.css") }}" rel="stylesheet">
+  <link href="{{ asset("/HTML/assets/vendor/ionicons/css/ionicons.min.css") }}" rel="stylesheet">
+  <link href="{{ asset("/HTML/assets/vendor/boxicons/css/boxicons.min.css") }}" rel="stylesheet">
+  <link href="{{ asset("/HTML/assets/vendor/venobox/venobox.css") }}" rel="stylesheet">
+  <link href="{{ asset("/HTML/assets/vendor/owl.carousel/assets/owl.carousel.min.css") }}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="{{ asset("/HTML/assets/css/style.css") }}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Folio - v3.0.0
-  * Template URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -429,18 +422,18 @@
   </div><!-- End Footer -->
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/typed/typed.js"></script>
-  <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="{{ asset("/HTML/assets/vendor/jquery/jquery.min.js") }}"></script>
+  <script src="{{ asset("/HTML/assets/vendor/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+  <script src="{{ asset("/HTML/assets/vendor/jquery.easing/jquery.easing.min.js") }}"></script>
+  <script src="{{ asset("/HTML/assets/vendor/php-email-form/validate.js") }}"></script>
+  <script src="{{ asset("/HTML/assets/vendor/typed/typed.js") }}"></script>
+  <script src="{{ asset("/HTML/assets/vendor/jquery-sticky/jquery.sticky.js") }}"></script>
+  <script src="{{ asset("/HTML/assets/vendor/isotope-layout/isotope.pkgd.min.js") }}"></script>
+  <script src="{{ asset("/HTML/assets/vendor/venobox/venobox.min.js") }}"></script>
+  <script src="{{ asset("/HTML/assets/vendor/owl.carousel/owl.carousel.min.js") }}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{ asset("/HTML/assets/js/main.js") }}"></script>
 
 </body>
 
