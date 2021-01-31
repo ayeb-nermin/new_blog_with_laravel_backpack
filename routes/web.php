@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('front.layouts.app');
 });
-
+Route::post('/contact/submit','Admin\ContactCrudController@submit')->name('contact.submit');
