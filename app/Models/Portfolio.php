@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str; 
 
 class Portfolio extends Model
 {
@@ -55,4 +56,8 @@ class Portfolio extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+    public function setSlugAttribute()
+    {
+        return $this->attributes['slug'] = Str::slug($this->title, '-');
+    }
 }

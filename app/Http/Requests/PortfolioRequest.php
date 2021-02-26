@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use App\Models\Portfolio;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PortfolioRequest extends FormRequest
@@ -37,9 +38,13 @@ class PortfolioRequest extends FormRequest
      */
     public function attributes()
     {
-        return [
-            //
-        ];
+        $id=$this->route()->parameter('id');
+        $rules = [];
+        if (request()->method() == 'POST') {
+            $rules['slug'] = 'required|unique:' . (new Portfolio())->getTable() . ',slug';
+        } else {
+            $rules['slug'] = 'required|unique:' . (new Portfolio())->getTable() . ',slug' . $id . ',id';
+        }
     }
 
     /**

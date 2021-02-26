@@ -17,6 +17,7 @@ class CreatePortfoliosTable extends Migration
             $table->unsignedBigInteger('portfolio_category_id')->nullable();
             $table->foreign('portfolio_category_id','fk_pci')->references('id')->on('portfolio_categories');
             $table->string('title')->nullable();
+            $table->string('slug')->nullable();
             $table->string('description')->nullable();
             $table->LongText('image')->nullable();
             $table->integer('order')->nullable();

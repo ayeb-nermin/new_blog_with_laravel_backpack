@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\PortfolioRequest;
+use App\Models\Portfolio;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -39,6 +40,16 @@ class PortfolioCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        CRUD::addColumn([
+            // 1-n relationship
+            'label'     => 'Portfolio category', // Table column heading
+            'type'      => 'select',
+            'name'      => 'portfolio_category_id', // the column that contains the ID of that connected entity;
+            'entity'    => 'category', // the method that defines the relationship in your Model
+            'attribute' => 'data_filter', // foreign key attribute that is shown to user
+            'model'     => "App\Models\PortfolioCategory", // foreign key model
+        ]);
+
         CRUD::setFromDb(); // columns
 
         /**
@@ -78,6 +89,19 @@ class PortfolioCrudController extends CrudController
                 }), //  you can use this to filter the results show in the select
             ]
         );
+        CRUD::addField([
+            'label' => 'Title',
+            'name' => 'title',
+            'type' => 'text',
+        ]);
+        $portfolio = new Portfolio();
+        CRUD::addField([
+            'label' => 'Slug',
+            'name' => 'slug',
+            'type' => 'text',
+            'value' => $portfolio->setSlugAttribute(),
+            'hint' => 'this will be generated automatically, no need to fill it!!',
+        ]);
         $this->crud->addField([
             'label' => "Protfolio Image",
             'name' => "image",
@@ -107,5 +131,10 @@ class PortfolioCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    public function details($id)
+    {
+        dd('here');
     }
 }

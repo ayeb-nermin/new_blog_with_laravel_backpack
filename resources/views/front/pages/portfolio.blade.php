@@ -24,19 +24,24 @@
             @endif
         </div>
 
+        @php
+        $portfolios = App\Models\Portfolio::where('is_active',1)->orderBy('order','asc')->get();
+        @endphp
+        @if($portfolios)
         <div class="row portfolio-container">
-
+            @foreach($portfolios as $portfolio)
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                <img src="{{$portfolio->image}}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                    <h4>Web 3</h4>
-                    <p>Web</p>
-                    <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                    <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    <h4>{{$portfolio->title}}</h4>
+                    <p>{{$portfolio->description}}</p>
+                    <a href="{{$portfolio->image}}" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                    <a href="{{route('portfolio.details',$portfolio->id)}}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
             </div>
-
+            @endforeach
         </div>
+        @endif
 
     </div>
 
